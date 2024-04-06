@@ -1,0 +1,192 @@
+##################################################################################################
+
+#Developers DeSerialize
+
+##################################################################################################
+pets:
+  strengthPet:
+    type: 'POTION_EFFECT'
+    item:
+      droppable: false
+      effects:
+        - 'INCREASE_DAMAGE,2,180'
+      cooldown: 3
+      name: '&4&lStrength &c&lPet'
+      lore:
+        - "&7This pet has the power to make you"
+        - "&7into one of the greatest warriors of all time!"
+        - ""
+        - "&7Right click me to receive a strength boost!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &4&lStrength &c&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &4&lStrength &c&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    material: "SKULL_ITEM"
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODVhNzk3NzIxNjA2NDI4OTRmNGJkZDJiMzE4MTRkYzQ3Mzg2NmEwMDAyNDkwZjJhNjIxMDQ2MGRlMGE5MWVlNSJ9fX0='
+  ##################################################################################################
+  speedPet:
+    type: 'POTION_EFFECT'
+    item:
+      droppable: false
+      effects:
+        - 'SPEED,2,180'
+      cooldown: 3
+      name: '&b&lSpeed &3&lPet'
+      lore:
+        - "&7This pet has the power to make you"
+        - "&7as fast as the flash!"
+        - ""
+        - "&7Right click me to receive a speed boost!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &b&lSpeed &3&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &b&lSpeed &3&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2Y5MjMxZTkzOTkwZTQ0MzllMWJhZDIyNzI4ODQ2ZDQ5N2Q4ZDI4NzU2NDQ2NDg2MTljOWE1Nzg4YjM3In19fQ=='
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  healPet:
+    type: 'COMMAND'
+    item:
+      droppable: false
+      cooldown: 3
+      commands:
+        - 'heal %player%'
+      name: '&d&lHealing &5&lPet'
+      lore:
+        - "&7This pet holds extreme power"
+        - "&7USe it carrefully to become almost invincible in combat!"
+        - ""
+        - "&7Right click me to instantly heal!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &d&lHealing &5&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &d&lHealing &5&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmFhYWU3YjRiZmExYjA2Y2I3NTJmNmE0NjQ3NWM4ZDA5OWEyMzEyOWIxMzQ5OWI1YjEwMjgwNWZjNjA5YzlhZSJ9fX0='
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  hastePet:
+    type: 'POTION_EFFECT'
+    item:
+      droppable: false
+      effects:
+        - 'FAST_DIGGING,2,180'
+      cooldown: 3
+      name: '&e&lHaste &6&lPet'
+      lore:
+        - "&7This pet is extremely useful"
+        - "&7use it to clear out large amounts of blocks in no time!"
+        - ""
+        - "&7Right click me to receive a haste boost!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &e&lHaste &6&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &e&lHaste &6&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTkwODIzNWExY2JlY2MwM2E3MmNkZjcxMGY0ZWQ1MTlkNjViNGRhNjJiNTRhNGVmOThhNzQwOGZjZjUxYjgzYiJ9fX0='
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  lunchboxPet:
+    type: 'COMMAND'
+    item:
+      droppable: false
+      commands:
+        - 'feed %player%'
+      cooldown: 3
+      name: '&d&lL&5&lu&d&ln&5&lc&d&lh&5&lB&d&lo&5&lx &d&lP&5&le&d&lt'
+      lore:
+        - "&7Feeling hungry on the go?"
+        - "&7Use this pet to replenish your hunger!"
+        - ""
+        - "&7Right click me to instantly replenish your hunger"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &d&lLunchbox &5&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &d&lLunchbox &5&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTZlZjFjMjVmNTE2ZjJlN2Q2Zjc2Njc0MjBlMzNhZGNmM2NkZjkzOGNiMzdmOWE0MWE4YjM1ODY5ZjU2OWIifX19'
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  lootllamaPet:
+    type: 'CHANCE_COMMAND'
+    item:
+      droppable: false
+      cooldown: 3
+      name:  "&e&lLoot &6&lLlama &e&lPet"
+      lore:
+        - "&7This pet holds extreme riches"
+        - "&7Use it to become the wealthiest on the server!"
+        - ""
+        - "&7Right click me to receive riches"
+    rewards:
+      - 'give %player% diamond 10,50'
+      - 'give %player% emerald 10,50'
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &e&lLoot &6&lLlama &e&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &e&lLoot &6&lLlama &e&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RkMmE4N2Q3NDM2ZDk5MTBhMjJjYzUzNzg2YTNmNDMyZDdmZWU3MjhhZjY4NmYxZjMyYTY5NDkxOGZhOTJiOCJ9fX0'
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  godPet:
+    type: 'POTION_EFFECT'
+    item:
+      droppable: false
+      effects:
+        - 'FAST_DIGGING,2,180'
+        - 'INCREASE_DAMAGE,3,180'
+        - 'SPEED,3,180'
+      cooldown: 3
+      name: "&c&lG&4&lo&c&ld &4&lP&c&le&4&lt"
+      lore:
+        - "&7Legend says this pet holds extreme power,"
+        - "&7So much power, that it could cause chaos & havoc"
+        - "&7if it lands into the wrong hands!"
+        - ""
+        - "&7Do &7&nYOU&r &7want to possess these powers?"
+        - ""
+        - "&7Right click me to receive GodLike effects!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &c&lG&4&lo&c&ld &4&lP&c&le&4&lt&f!'
+    cooldown-message: '&6&lPets &7» &fThe &c&lG&4&lo&c&ld &4&lP&c&le&4&lt &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzE3MmQwYTBkNjk2OTIxNmI3ZjBiMmY5OWFkYjQwOTk0NWM1ZGU5YjA4MzFmZjVlZjA2NGJhNWYzODM1ZTY5NiJ9fX0'
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  chickenPet:
+    type: 'CHICKEN'
+    item:
+      droppable: false
+      cooldown: 3
+      name: "&e&lChicken &6&lPet"
+      lore:
+        - "&7This pet grants the ability of flight"
+        - "&7Use it to travel at speed!"
+        - ""
+        - "&7Right click me to receive flight!"
+    activate-message: '&6&lPets &7» &fYou have &a&nactivated&r your &eChicken &6&lPet&f!'
+    cooldown-message: '&6&lPets &7» &fThe &eChicken &6&lPet &fis currently on &ccooldown&f, please wait &c&n%time%&r &fbefore doing that again!'
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTRkODE2YTQ3NWIzZjMxM2I2MjBkNjViZjkzNTg5MzFiNDZhZjljOGY0ZTdjOWFlNjQ3MDg4ODBiZWE2YmUifX19'
+    material: "SKULL_ITEM"
+  ##################################################################################################
+  sheepPet:
+    type: 'SHEEP'
+    item:
+      droppable: false
+      name: "&e&lSheep &6&lPet"
+      lore:
+        - "&7This pet grants the ability to negate"
+        - "&7all fall damage!"
+        - "&f"
+        - "&7By having me in your inventory you take no fall damage!"
+    skin: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTdmNWFhZDVmMTE1ZjkxZTI0M2I0Y2IyZjFhMjc2ZmQzMjdkYWZkMzZiZTYxMmRjZjUyMTRkNGMyNTZiOSJ9fX0'
+    material: "SKULL_ITEM"
+  ##################################################################################################
+##################################################################################################
+messages:
+  no_permission: "&cNo permissions."
+  no_player: "&cCannot find player: %target%"
+  wrong-usage: "&cInvalid usage do /pets help for more information!"
+  success: "&aYou have given %target% a pet"
+  invalid-pet: "&cInvalid pet do /pets view for the pets names"
+  invalid-args: "&c&LYou don't have enough args do /pets help for more information!"
+  failed-blockplace: "&cYou cannot place &f%petType%"
+  cannotdrop-this-item: "&cYou cannot drop this item"
+  flight-toggle-off: "&b&lFLIGHT TOGGLED ON"
+  flight-toggle-on: "&b&lFLIGHT TOGGLED OFF"
+  worldguard-notenabled: "&cMAKE SURE YOU HAVE WORLD GUARD"
+  help:
+    - "&a/pets view &7Opens the pets menu!"
+    - "&a/pets give <player> <type> &7Gives the player a pet!"
+    - "&a/pets help &7Shows you this!"
+
+##################################################################################################
+petsmenu:
+  name: "&A&LPets"
+  size: 27
+  filler:
+    material: "BLUE_STAINED_GLASS_PANE"
+    data: 13

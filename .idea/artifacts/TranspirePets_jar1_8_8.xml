@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TranspirePets:jar1.8.8">
+    <output-path>$USER_HOME$/OneDrive/Desktop/1.8.8 server/plugins</output-path>
+    <root id="archive" name="TranspirePets.jar">
+      <element id="module-output" name="TranspirePets" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/saicone/rtag/rtag/1.4.4/rtag-1.4.4.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>

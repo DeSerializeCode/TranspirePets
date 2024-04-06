@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TranspirePets:jar">
+    <output-path>$USER_HOME$/OneDrive/Desktop/1.20.4 server/plugins</output-path>
+    <root id="archive" name="TranspirePets.jar">
+      <element id="module-output" name="TranspirePets" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/rtag-1.4.4.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+    </root>
+  </artifact>
+</component>
