@@ -1,15 +1,11 @@
 package com.deserialize.transpirepets.events;
 
 import com.deserialize.transpirepets.TranspirePets;
-import com.deserialize.transpirepets.Utils.RandomCollection;
-import com.google.common.collect.ImmutableSet;
-import com.saicone.rtag.Rtag;
+import com.deserialize.transpirepets.utils.RandomCollection;
 import com.saicone.rtag.RtagItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,7 +13,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.util.Vector;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.*;
@@ -31,7 +26,6 @@ public class PlayerInteract implements Listener {
 
     @EventHandler
     public void onRightClickEvent(PlayerInteractEvent event) {
-
         Player player = event.getPlayer();
         if (player.getItemInHand().getType() != Material.AIR) {
             ItemStack itemStack = player.getItemInHand();
@@ -47,6 +41,10 @@ public class PlayerInteract implements Listener {
                 if (main.getDropEvent().containsKey(player.getUniqueId())){
                     event.setCancelled(true);
                     main.getDropEvent().remove(player.getUniqueId());
+                    return;
+                }
+                if (item.get("Type").equals("LUMBER")){
+                    player.sendMessage(main.translate(main.getConfig().getString("messages.passive-pet")));
                     return;
                 }
                 if (item.get("Type").equals("POTION_EFFECT")) {
@@ -97,7 +95,6 @@ public class PlayerInteract implements Listener {
                 String s = (String)var4.next();
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), s.replace("%player%", player.getName()));
             }
-
         }
     }
 

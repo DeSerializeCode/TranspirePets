@@ -1,4 +1,4 @@
-package com.deserialize.transpirepets.Menus;
+package com.deserialize.transpirepets.menus;
 
 import com.deserialize.transpirepets.TranspirePets;
 import org.bukkit.Bukkit;

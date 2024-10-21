@@ -1,4 +1,4 @@
-package com.deserialize.transpirepets.Utils;
+package com.deserialize.transpirepets.utils;
 
 import org.bukkit.ChatColor;
 

@@ -1,13 +1,14 @@
 package com.deserialize.transpirepets;
 
 
-import com.deserialize.transpirepets.Menus.Pets;
-import com.deserialize.transpirepets.Utils.Color;
-import com.deserialize.transpirepets.Utils.RandomCollection;
-import com.deserialize.transpirepets.Utils.UpdateChecker;
+import com.deserialize.transpirepets.menus.Pets;
+import com.deserialize.transpirepets.utils.Color;
+import com.deserialize.transpirepets.utils.RandomCollection;
+import com.deserialize.transpirepets.utils.UpdateChecker;
 import com.deserialize.transpirepets.events.EntityDamage;
-import com.deserialize.transpirepets.events.PlayerInteract;
+import com.deserialize.transpirepets.events.PlayerBreak;
 import com.deserialize.transpirepets.events.PlayerDrop;
+import com.deserialize.transpirepets.events.PlayerInteract;
 import com.saicone.rtag.RtagItem;
 import com.saicone.rtag.util.SkullTexture;
 import org.bukkit.ChatColor;
@@ -21,11 +22,12 @@ import java.util.logging.Logger;
 public final class TranspirePets extends JavaPlugin {
 
     private static TranspirePets instance;
-    private HashMap<String, RandomCollection> petRewards = new HashMap<>();
     public Pets petsMenu;
     public HashMap<UUID, String> dropEvent = new HashMap<UUID, String>();
     public HashMap<String, ItemStack> allPets = new HashMap<>();
     public Color color;
+    private final HashMap<String, RandomCollection> petRewards = new HashMap<>();
+    private ArrayList<String> lumberBlocks;
 
     public static TranspirePets getInstance() {
         return instance;
@@ -33,6 +35,7 @@ public final class TranspirePets extends JavaPlugin {
 
     public void onEnable() {
         instance = this;
+        this.lumberBlocks = new ArrayList<>();
         this.loadConfig();
         this.loadCommands();
         this.loadListeners();
@@ -41,7 +44,7 @@ public final class TranspirePets extends JavaPlugin {
         Logger logger = this.getLogger();
         this.color = new Color();
         (new UpdateChecker(this, 82199)).getVersion((version) -> {
-            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version) || Double.parseDouble(this.getDescription().getVersion()) > Double.parseDouble(version)){
                 logger.info("There is not a new update available.");
             } else {
                 logger.info("There is a new update available.");
@@ -90,9 +93,10 @@ public final class TranspirePets extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new Pets(this), this);
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(this), this);
         this.getServer().getPluginManager().registerEvents(new EntityDamage(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerBreak(this), this);
     }
 
-    public Color getColor(){
+    public Color getColor() {
         return this.color;
     }
 
@@ -113,7 +117,7 @@ public final class TranspirePets extends JavaPlugin {
 
 
             for (String string : this.getConfig().getStringList("pets." + petName + ".item.lore")) {
-              list.add(this.translate(string));
+                list.add(this.translate(string));
             }
             itemMeta.setLore(list);
             item.setItemMeta(itemMeta);
@@ -123,18 +127,25 @@ public final class TranspirePets extends JavaPlugin {
             rtagItem.set(String.valueOf(droppable), "Droppable");
             rtagItem.set(petType, "Type");
 
-            if (petType.equalsIgnoreCase(  "CHICKEN")){
+            if (petType.equalsIgnoreCase("LUMBER")) {
+                List<String> blocks = this.getConfig().getStringList("pets." + petName + ".blocks");
+                for (String block : blocks) {
+                    this.lumberBlocks.add(block);
+                }
+            }
+            if (petType.equalsIgnoreCase("CHICKEN")) {
                 rtagItem.set("true", "Flight");
             }
-
             rtagItem.load();
             if (petType.equalsIgnoreCase("CHANCE_COMMAND")) {
                 this.loadRewards(petName);
             }
-
             this.allPets.put(petName, rtagItem.getItem());
         }
+    }
 
+    public ArrayList<String> getLumberBlocks() {
+        return lumberBlocks;
     }
 
     public String translate(String s) {

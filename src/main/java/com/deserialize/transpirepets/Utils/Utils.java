@@ -1,4 +1,4 @@
-package com.deserialize.transpirepets.Utils;
+package com.deserialize.transpirepets.utils;
 
 import com.deserialize.transpirepets.TranspirePets;
 import com.saicone.rtag.RtagItem;
@@ -7,7 +7,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import com.saicone.rtag.RtagItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;

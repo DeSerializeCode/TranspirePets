@@ -1,4 +1,4 @@
-package com.deserialize.transpirepets.Utils;
+package com.deserialize.transpirepets.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
